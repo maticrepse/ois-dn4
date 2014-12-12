@@ -32,10 +32,6 @@
 		        <li><a href="#section1">Začetek</a></li>
 		        <li><a href="#section2">Ustvari EHR</a></li>
 		        <li><a href="#section3">Vnesi ID</a></li>
-		        <li><a href="#section4">Four</a></li>
-		        <li><a href="#section5">Five</a></li>
-		        <li><a href="#section6">Why</a></li>
-		        <li><a href="#section7">Who</a></li>
 		        <li>&nbsp;</li>
 		      </ul>
 		      
@@ -110,8 +106,37 @@
       							</div>
     						</div>
     						<div class="form-group">
+      							<label class="col-lg-2 control-label">Spol</label>
+      							<div class="col-lg-10">
+        							<div class="radio">
+          								<label>
+           									<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+           										Moški
+          								</label>
+        							</div>
+        							<div class="radio">
+          								<label>
+            								<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            									Ženska
+          								</label>
+        							</div>
+        							<div class="radio">
+          								<label>
+            								<input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+            									Drugo
+          								</label>
+        							</div>
+        							<div class="radio">
+          								<label>
+            								<input type="radio" name="optionsRadios" id="optionsRadios4" value="option4">
+            									Neznano
+          								</label>
+        							</div>
+      							</div>
+    						</div>
+    						<div class="form-group">
       							<div class="col-lg-10 col-lg-offset-2">
-        							<button type="button" class="btn btn-primary" onclick="ustvariEHR()" id="ustvari">Ustvari EHR</button>
+        							<button type="button" class="btn btn-info" onclick="ustvariEHR()" id="ustvari">Ustvari EHR</button>
         							<span id="vasID"></span>
      							</div>
     						</div>
@@ -124,9 +149,55 @@
 		<!------------------------END--OF--SECTION--2------------------------>
 		
 		<!------------------------SECTION--3------------------------>
+		<section class="container-fluid" id="section3">
+			<div class="container">
+				<div class="row">
+					<div class="row"><div class="col-sm-3">&nbsp</div></div>
+					<div class="row"><div class="col-sm-3">&nbsp</div></div>
+					<div class="row"><div class="col-sm-3">&nbsp</div></div>
+					<div class="row"><div class="col-sm-3">&nbsp</div></div>
+					<div class="row"><div class="col-sm-3">&nbsp</div></div>
+					<form class="form-horizontal">
+  						<fieldset>
+    						<legend>Vpišite vaš EHR ID</legend>
+    						<div class="form-group">
+    							<label for="select" class="col-lg-2 control-label">Primer</label>
+								<div class="col-lg-10">
+									<select class="form-control input-sm" id="selectPrimerID">
+										<option value=""></option>
+										<option value="cdf61712-575d-4ebb-bd22-192312736274">Pujsa Pepa</option>
+									</select>
+								</div>
+    						</div>
+    						<div class="form-group">
+      							<label for="inputID" class="col-lg-2 control-label">EHR ID</label>
+      							<div class="col-lg-10">
+       	 							<input type="text" class="form-control" id="inputID" placeholder="cdf61712-575d-4ebb-bd22-192312736274">
+      							</div>
+    						</div>
+    						<div class="form-group">
+      							<div class="col-lg-10 col-lg-offset-2">
+      								<div><a class="btn btn-info" onclick="vnesenEHRID()" id="vnesen">Profil</a></div>
+      								<div><a class="btn btn-info" style="visibility: hidden;" id="neviden" href="#section4"></a></div>
+        							<span id="profilIDneuspesen"></span>
+     							</div>
+    						</div>
+    					</fieldset>
+    				</form>
+				</div>
+			</div>
+		</section>
 		<!------------------------END--OF--SECTION--3------------------------>
 		
 		<!------------------------SECTION--4------------------------>
+        <span id="profilID"></span>
+        <!--<section class="container-fluid" id="section4">
+        	<!--<div class="container">
+        		<!--<div class="row">
+        			
+        		</div>
+        	</div>
+        </section>-->
 		<!------------------------END--OF--SECTION--4------------------------>
 		
 		<!------------------------SECTION--5------------------------>
