@@ -54,7 +54,7 @@ function vnesenEHRID() {
 				$("#profilID").html('<section class="container-fluid" id="section4"><div class="container"><div class="row"></div></div></section>');
 				console.log("Bolnik '" + party.firstNames + " " + party.lastNames + "', ki se je rodil '" + party.dateOfBirth + "'.");
 				$("#neviden").click();
-				
+					
 			},
 			error: function(err) {
 				$("#profilIDneuspesen").html("<span class='obvestilo label label-danger fade-in'>Napaka '" + JSON.parse(err.responseText).userMessage + "'!");

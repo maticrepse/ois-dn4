@@ -72,74 +72,71 @@
 				<div class="row">
 					<div class="row"><div class="col-sm-3">&nbsp</div></div>
 					<div class="row"><div class="col-sm-3">&nbsp</div></div>
-					<div class="row"><div class="col-sm-3">&nbsp</div></div>
-					<div class="row"><div class="col-sm-3">&nbsp</div></div>
-					<div class="row"><div class="col-sm-3">&nbsp</div></div>
 					<form class="form-horizontal">
-  						<fieldset>
-    						<legend>Ustvarite si EHR</legend>
-    						<div class="form-group">
-    							<label for="select" class="col-lg-2 control-label">Primer</label>
+	  					<fieldset>
+	    					<legend>Ustvarite si EHR</legend>
+	    					<div class="form-group">
+	    						<label for="select" class="col-lg-2 control-label">Primer</label>
 								<div class="col-lg-10">
 									<select class="form-control input-sm" id="selectPrimer">
 										<option value=""></option>
 										<option value="Pujsa,Pepa,1938-10-30T14:58">Pujsa Pepa</option>
 									</select>
 								</div>
-    						</div>
-    						<div class="form-group">
-      							<label for="inputFirst" class="col-lg-2 control-label">Ime</label>
-      							<div class="col-lg-10">
-       	 							<input type="text" class="form-control" id="inputFirst" placeholder="Matic">
-      							</div>
-    						</div>
-    						<div class="form-group">
-      							<label for="inputLast" class="col-lg-2 control-label">Priimek</label>
-      							<div class="col-lg-10">
-       	 							<input type="text" class="form-control" id="inputLast" placeholder="Repše">
-      							</div>
-    						</div>
-    						<div class="form-group">
-      							<label for="inputDatum" class="col-lg-2 control-label">Datum rojstva</label>
-      							<div class="col-lg-10">
-       	 							<input type="text" class="form-control" id="inputDatum" placeholder="1995-01-21T11:58">
-      							</div>
-    						</div>
-    						<div class="form-group">
-      							<label class="col-lg-2 control-label">Spol</label>
-      							<div class="col-lg-10">
-        							<div class="radio">
-          								<label>
-           									<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-           										Moški
-          								</label>
-        							</div>
-        							<div class="radio">
-          								<label>
-            								<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-            									Ženska
-          								</label>
-        							</div>
-        							<div class="radio">
-          								<label>
-            								<input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
-            									Drugo
-          								</label>
-        							</div>
-        							<div class="radio">
-          								<label>
-            								<input type="radio" name="optionsRadios" id="optionsRadios4" value="option4">
-            									Neznano
-          								</label>
-        							</div>
-      							</div>
-    						</div>
-    						<div class="form-group">
-      							<div class="col-lg-10 col-lg-offset-2">
-        							<button type="button" class="btn btn-info" onclick="ustvariEHR()" id="ustvari">Ustvari EHR</button>
-        							<span id="vasID"></span>
-     							</div>
-    						</div>
+	    					</div>
+	    					<div class="form-group">
+	      						<label for="inputFirst" class="col-lg-2 control-label">Ime</label>
+	      						<div class="col-lg-10">
+	        							<input type="text" class="form-control" id="inputFirst" placeholder="Matic">
+	      						</div>
+	    					</div>
+	    					<div class="form-group">
+	      						<label for="inputLast" class="col-lg-2 control-label">Priimek</label>
+	      						<div class="col-lg-10">
+	        							<input type="text" class="form-control" id="inputLast" placeholder="Repše">
+	      						</div>
+	    					</div>
+	    					<div class="form-group">
+	      						<label for="inputDatum" class="col-lg-2 control-label">Datum rojstva</label>
+	      						<div class="col-lg-10">
+	        							<input type="text" class="form-control" id="inputDatum" placeholder="1995-01-21T11:58">
+	      						</div>
+	    					</div>
+	    					<div class="form-group">
+	      						<label class="col-lg-2 control-label">Spol</label>
+	      						<div class="col-lg-10">
+								<div class="radio">
+	  								<label>
+	   									<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+	   										Moški
+	  								</label>
+								</div>
+								<div class="radio">
+	  								<label>
+	    								<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+	    									Ženska
+	  								</label>
+								</div>
+								<div class="radio">
+	  								<label>
+	    								<input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+	    									Drugo
+	  								</label>
+								</div>
+								<div class="radio">
+	  								<label>
+	    								<input type="radio" name="optionsRadios" id="optionsRadios4" value="option4">
+	    									Neznano
+	  								</label>
+								</div>
+	      						</div>
+	    					</div>
+	    					<div class="form-group">
+	      						<div class="col-lg-10 col-lg-offset-2">
+								<button type="button" class="btn btn-info" onclick="ustvariEHR()" id="ustvari">Ustvari EHR</button>
+								<span id="vasID"></span>
+	     						</div>
+	    					</div>
 						</fieldset>
 					</form>
 				</div>
@@ -158,46 +155,48 @@
 					<div class="row"><div class="col-sm-3">&nbsp</div></div>
 					<div class="row"><div class="col-sm-3">&nbsp</div></div>
 					<form class="form-horizontal">
-  						<fieldset>
-    						<legend>Vpišite vaš EHR ID</legend>
-    						<div class="form-group">
-    							<label for="select" class="col-lg-2 control-label">Primer</label>
+	  					<fieldset>
+	    					<legend>Vpišite vaš EHR ID</legend>
+	    					<div class="form-group">
+	    						<label for="select" class="col-lg-2 control-label">Primer</label>
 								<div class="col-lg-10">
 									<select class="form-control input-sm" id="selectPrimerID">
 										<option value=""></option>
 										<option value="cdf61712-575d-4ebb-bd22-192312736274">Pujsa Pepa</option>
 									</select>
 								</div>
-    						</div>
-    						<div class="form-group">
-      							<label for="inputID" class="col-lg-2 control-label">EHR ID</label>
-      							<div class="col-lg-10">
-       	 							<input type="text" class="form-control" id="inputID" placeholder="cdf61712-575d-4ebb-bd22-192312736274">
-      							</div>
-    						</div>
-    						<div class="form-group">
-      							<div class="col-lg-10 col-lg-offset-2">
-      								<div><a class="btn btn-info" onclick="vnesenEHRID()" id="vnesen">Profil</a></div>
-      								<div><a class="btn btn-info" style="visibility: hidden;" id="neviden" href="#section4"></a></div>
-        							<span id="profilIDneuspesen"></span>
-     							</div>
-    						</div>
-    					</fieldset>
-    				</form>
+	    					</div>
+	    					<div class="form-group">
+	      						<label for="inputID" class="col-lg-2 control-label">EHR ID</label>
+	      						<div class="col-lg-10">
+	        							<input type="text" class="form-control" id="inputID" placeholder="cdf61712-575d-4ebb-bd22-192312736274">
+	      						</div>
+	    					</div>
+	    					<div class="form-group">
+	      						<div class="col-lg-10 col-lg-offset-2">
+	      							<div><a class="btn btn-info" onclick="vnesenEHRID()" id="vnesen">Profil</a></div>
+	      							<div><a class="btn btn-info" style="visibility: hidden;" id="neviden" href="#section4"></a></div>
+								<span id="profilIDneuspesen"></span>
+	     						</div>
+	    					</div>
+	    				</fieldset>
+	    			</form>
 				</div>
 			</div>
 		</section>
-		<!------------------------END--OF--SECTION--3------------------------>
+	<!------------------------END--OF--SECTION--3------------------------>
 		
-		<!------------------------SECTION--4------------------------>
-        <span id="profilID"></span>
-        <!--<section class="container-fluid" id="section4">
-        	<!--<div class="container">
-        		<!--<div class="row">
-        			
-        		</div>
-        	</div>
-        </section>-->
+	<!------------------------SECTION--4------------------------>
+	<!--<span id="profilID"></span>-->
+	<section class="container-fluid" id="section4">
+		<div class="col-sm-10 col-sm-offset-1">
+    			<div class="container">
+    				<div class="row">
+				      
+    				</div><!--/row-->
+    			</div><!--/container--> 
+  		</div>
+	</section>
 		<!------------------------END--OF--SECTION--4------------------------>
 		
 		<!------------------------SECTION--5------------------------>
