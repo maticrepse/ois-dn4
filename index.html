@@ -76,7 +76,7 @@
 	  					<fieldset>
 	    					<legend>Ustvarite si EHR</legend>
 	    					<div class="form-group">
-	    						<label for="select" class="col-lg-2 control-label">Primer</label>
+	    						<label for="selectPrimer" class="col-lg-2 control-label">Primer</label>
 								<div class="col-lg-10">
 									<select class="form-control input-sm" id="selectPrimer">
 										<option value=""></option>
@@ -158,7 +158,7 @@
 	  					<fieldset>
 	    					<legend>Vpišite vaš EHR ID</legend>
 	    					<div class="form-group">
-	    						<label for="select" class="col-lg-2 control-label">Primer</label>
+	    						<label for="selectPrimerID" class="col-lg-2 control-label">Primer</label>
 								<div class="col-lg-10">
 									<select class="form-control input-sm" id="selectPrimerID">
 										<option value=""></option>
@@ -192,7 +192,30 @@
 		<div class="col-sm-10 col-sm-offset-1">
     			<div class="container">
     				<div class="row">
-				      
+						<ul class="nav nav-tabs">
+							<li class="active" id="tab1Stars"><a data-toggle="tab" onclick="switchTab('tab1')" id="tab1">Vaš profil</a></li>
+							<li class="" id="tab2Stars"><a data-toggle="tab" onclick="switchTab('tab2')" id="tab2">Stare meritve</a></li>
+							<li class="" id="tab3Stars"><a data-toggle="tab" onclick="switchTab('tab3')" id="tab3">Dodaj meritve</a></li>
+							<li class="" id="tab4Stars"><a data-toggle="tab" onclick="switchTab('tab4')" id="tab4">tab4</a></li>
+							<li class="" id="tab5Stars"><a data-toggle="tab" onclick="switchTab('tab5')" id="tab5">tab5</a></li>
+						</ul>
+						<div id="myTabContent" class="tab-content">
+							<div class="tab-pane fade active in" id="cont1">
+								<p>Tab1 content</p>
+							</div>
+							<div class="tab-pane fade" id="cont2">
+								<p>Tab2 content</p>
+							</div>
+							<div class="tab-pane fade" id="cont3">
+								<p>Tab3 content</p>
+							</div>
+							<div class="tab-pane fade" id="cont4">
+								<p>Tab4 content</p>
+							</div>
+							<div class="tab-pane fade" id="cont5">
+								<p>Tab5 content</p>
+							</div>
+						</div>
     				</div><!--/row-->
     			</div><!--/container--> 
   		</div>

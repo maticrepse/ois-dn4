@@ -120,6 +120,64 @@ function ustvariEHR() {
 	}
 }
 
+function switchTab(niz){
+	if(niz==="tab1"){
+		$("#tab1Stars").addClass("active");
+		$("#tab2Stars").removeClass("active");
+		$("#tab3Stars").removeClass("active");
+		$("#tab4Stars").removeClass("active");
+		$("#tab5Stars").removeClass("active");
+		$("#cont1").addClass("active in");
+		$("#cont2").removeClass("active in");
+		$("#cont3").removeClass("active in");
+		$("#cont4").removeClass("active in");
+		$("#cont5").removeClass("active in");
+	}else if(niz==="tab2"){
+		$("#tab2Stars").addClass("active");
+		$("#tab1Stars").removeClass("active");
+		$("#tab3Stars").removeClass("active");
+		$("#tab4Stars").removeClass("active");
+		$("#tab5Stars").removeClass("active");
+		$("#cont2").addClass("active in");
+		$("#cont1").removeClass("active in");
+		$("#cont3").removeClass("active in");
+		$("#cont4").removeClass("active in");
+		$("#cont5").removeClass("active in");
+	}else if(niz==="tab3"){
+		$("#tab3Stars").addClass("active");
+		$("#tab1Stars").removeClass("active");
+		$("#tab2Stars").removeClass("active");
+		$("#tab4Stars").removeClass("active");
+		$("#tab5Stars").removeClass("active");
+		$("#cont3").addClass("active in");
+		$("#cont1").removeClass("active in");
+		$("#cont2").removeClass("active in");
+		$("#cont4").removeClass("active in");
+		$("#cont5").removeClass("active in");
+	}else if(niz==="tab4"){
+		$("#tab4Stars").addClass("active");
+		$("#tab1Stars").removeClass("active");
+		$("#tab3Stars").removeClass("active");
+		$("#tab2Stars").removeClass("active");
+		$("#tab5Stars").removeClass("active");
+		$("#cont4").addClass("active in");
+		$("#cont1").removeClass("active in");
+		$("#cont3").removeClass("active in");
+		$("#cont2").removeClass("active in");
+		$("#cont5").removeClass("active in");
+	}else if(niz==="tab5"){
+		$("#tab5Stars").addClass("active");
+		$("#tab1Stars").removeClass("active");
+		$("#tab3Stars").removeClass("active");
+		$("#tab4Stars").removeClass("active");
+		$("#tab2Stars").removeClass("active");
+		$("#cont5").addClass("active in");
+		$("#cont1").removeClass("active in");
+		$("#cont3").removeClass("active in");
+		$("#cont4").removeClass("active in");
+		$("#cont2").removeClass("active in");
+	}
+}
 
 $(document).ready(function() {
     $('#selectPrimer').change(function() {
