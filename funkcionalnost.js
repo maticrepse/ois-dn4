@@ -42,7 +42,7 @@ function vnesenEHRID() {
 	var ehrId = $("#inputID").val();
 
 	if (!ehrId || ehrId.trim().length == 0) {
-		$("#profilIDneuspesen").html("<span class='obvestilo label label-warning fade-in'>Prosim vnesite zahtevan podatek!");
+		$("#profilIDneuspesen").html('<div class="alert alert-dismissable alert-danger"><button type="button" class="close" data-dismiss="alert">×</button>Prosim vnesite zahtevan podatek</div>');
 	} else {
 		$.ajax({
 			url: baseUrl + "/demographics/ehr/" + ehrId + "/party",
@@ -57,7 +57,7 @@ function vnesenEHRID() {
 					
 			},
 			error: function(err) {
-				$("#profilIDneuspesen").html("<span class='obvestilo label label-danger fade-in'>Napaka '" + JSON.parse(err.responseText).userMessage + "'!");
+				$("#profilIDneuspesen").html('<div class="alert alert-dismissable alert-danger"><button type="button" class="close" data-dismiss="alert">×</button>Napaka "' + JSON.parse(err.responseText).userMessage + '!</div>');
 				console.log(JSON.parse(err.responseText).userMessage);
 			}
 		});
@@ -81,7 +81,7 @@ function ustvariEHR() {
 		spol="UNKNOWN";
 	}
 	if (!ime || !priimek || !datumRojstva || ime.trim().length == 0 || priimek.trim().length == 0 || datumRojstva.trim().length == 0) {
-		$("#vasID").html("<span class='obvestilo label label-warning fade-in'>Prosim vnesite zahtevane podatke!</span>");
+		$("#vasID").html('<div class="alert alert-dismissable alert-danger"><button type="button" class="close" data-dismiss="alert">×</button>Prosimo vnesite podatke.</div>');
 	} else {
 		$.ajaxSetup({
 		    headers: {"Ehr-Session": sessionId}
@@ -111,7 +111,7 @@ function ustvariEHR() {
 		                }
 		            },
 		            error: function(err) {
-		            	$("#vasID").html("<span class='obvestilo label label-danger fade-in'>Napaka '" + JSON.parse(err.responseText).userMessage + "'!");
+		            	$("#vasID").html('<div class="alert alert-dismissable alert-danger"><button type="button" class="close" data-dismiss="alert">×</button>Napaka "' + JSON.parse(err.responseText).userMessage + '!</div>');
 		            	console.log(JSON.parse(err.responseText).userMessage);
 		            }
 		        });
