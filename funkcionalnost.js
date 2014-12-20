@@ -50,7 +50,8 @@ function vnesenEHRID() {
 			headers: {"Ehr-Session": sessionId},
 	    	success: function (data) {
 				var party = data.party;
-				$("#profilID").html("<span class='obvestilo label label-success fade-in'>Bolnik '" + party.firstNames + " " + party.lastNames + "', ki se je rodil '" + party.dateOfBirth + "'.</span>");
+				$("#profilID").load("profil.html");
+				
 				$("#profilID").html('<section class="container-fluid" id="section4"><div class="container"><div class="row"></div></div></section>');
 				console.log("Bolnik '" + party.firstNames + " " + party.lastNames + "', ki se je rodil '" + party.dateOfBirth + "'.");
 				$("#neviden").click();
@@ -118,6 +119,10 @@ function ustvariEHR() {
 		    }
 		});
 	}
+}
+
+function izpisiTezo(){
+	
 }
 
 function switchTab(niz){

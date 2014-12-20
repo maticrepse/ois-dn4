@@ -63,7 +63,7 @@ body ul, body li {
     left: 50%;
     top: 10%;
     margin: 5em auto;
-    box-shadow: 0 2em 2em #333;
+    /*box-shadow: 0 2em 2em #333;*/
   }
 }
 

@@ -32,7 +32,7 @@
 		      <ul class="nav navbar-nav navbar-left">
 		        <li><a href="#section1">Začetek</a></li>
 		        <li><a href="#section2">Ustvari EHR</a></li>
-		        <li><a href="#section3">Vnesi ID</a></li>
+		        <li><a href="#section5">Vnesi ID</a></li>
 		        <li>&nbsp;</li>
 		      </ul>
 		      
@@ -53,7 +53,7 @@
 					<div class="col-sm-3"></div>
 					<div class="col-sm-2">
 						<div class="row">
-							<div class="col-sm-10 col-sm-offset-2 text-center"><a href="#section3" class="btn btn-info btn-lg">&nbspDA!&nbsp</a></div>
+							<div class="col-sm-10 col-sm-offset-2 text-center"><a href="#section5" class="btn btn-info btn-lg">&nbspDA!&nbsp</a></div>
 						</div>
 					</div>
 					<div class="col-sm-1"><div class="row"></div>&nbsp</div>
@@ -147,7 +147,7 @@
 		<!------------------------END--OF--SECTION--2------------------------>
 		
 		<!------------------------SECTION--3------------------------>
-		<section class="container-fluid" id="section3">
+		<section class="container-fluid" id="section5">
 			<div class="container">
 				<div class="row">
 					<div class="row"><div class="col-sm-3">&nbsp</div></div>
@@ -188,128 +188,18 @@
 	<!------------------------END--OF--SECTION--3------------------------>
 		
 	<!------------------------SECTION--4------------------------>
-	<!--<span id="profilID"></span>-->
-	<section class="container-fluid" id="section4">
-		<div class="col-sm-10 col-sm-offset-1">
-    			<div class="container">
-    				<div class="row">
-						<ul class="nav nav-tabs">
-							<li class="active" id="tab1Stars"><a data-toggle="tab" onclick="switchTab('tab1')" id="tab1">Osnovni podatki</a></li>
-							<li class="" id="tab2Stars"><a data-toggle="tab" onclick="switchTab('tab2')" id="tab2">Meritve</a></li>
-							<li class="" id="tab3Stars"><a data-toggle="tab" onclick="switchTab('tab3')" id="tab3">Dodaj meritve</a></li>
-							<li class="" id="tab4Stars"><a data-toggle="tab" onclick="switchTab('tab4')" id="tab4">tab4</a></li>
-							<li class="" id="tab5Stars"><a data-toggle="tab" onclick="switchTab('tab5')" id="tab5">tab5</a></li>
-						</ul>
-						<div id="myTabContent" class="tab-content">
-							<!-----------------------tab1 content------------------------>
-							<div class="tab-pane fade active in" id="cont1">
-								<div class="row">
-									<div class="col-lg-6">
-										<div class="row"><div class="col-lg-6 col-sm-12">&nbsp</div></div>
-										<div class="row">
-											<div class="col-lg-6 col-sm-12">
-												<div class="col-lg-6 col-sm-6">
-													<label>&nbsp&nbsp&nbsp&nbspIme:</label>
-				        							<h4 id="headerIme">&nbsp&nbsp&nbsp&nbspMatic</h4>
-				      							</div>
-				      							<div class="col-lg-6 col-sm-6">
-													<label>&nbsp&nbsp&nbsp&nbspPriimek:</label>
-				        							<h4 id="headerPriimek">&nbsp&nbsp&nbsp&nbspRepše</h4>
-				      							</div>
-			      							</div>
-										</div>
-										<div class="row"><div class="col-lg-6 col-sm-12">&nbsp</div></div>
-										<div class="row">
-											<div class="col-lg-6 col-sm-12">
-												<div class="col-lg-6 col-sm-6">
-													<label>&nbsp&nbsp&nbsp&nbspSpol:</label>
-				        							<h4 id="headerSpol">&nbsp&nbsp&nbsp&nbspMoški</h4>
-				      							</div>
-				      							<div class="col-lg-6 col-sm-6">
-													<label>&nbsp&nbsp&nbsp&nbspStarost:</label>
-				        							<h4 id="headerStarost">&nbsp&nbsp&nbsp&nbsp19</h4>
-				      							</div>
-			      							</div>
-										</div>
-		      						</div>
-	      							<div class="col-lg-6">
-	      								<h1 class="charts--headline">Wanna check the code?<br>Click "Edit this pen" in left bottom corner.</h1>
-										<div class="charts--container">
-										  <ul>
-										    <li class="chart">
-										      <h3 class="chart--subHeadline">Chart 1</h3>
-										      <h2 class="chart--headline">Pie Question Would Go Here</h2>
-										      <div id="pieChart">
-										        <svg id="pieChartSVG">
-										          <defs>
-										            <filter id='pieChartInsetShadow'>
-										              <feOffset dx='0' dy='0'/>
-										              <feGaussianBlur stdDeviation='3' result='offset-blur' />
-										              <feComposite operator='out' in='SourceGraphic' in2='offset-blur' result='inverse' />
-										              <feFlood flood-color='black' flood-opacity='1' result='color' />
-										              <feComposite operator='in' in='color' in2='inverse' result='shadow' />
-										              <feComposite operator='over' in='shadow' in2='SourceGraphic' />
-										            </filter>
-										            <filter id="pieChartDropShadow">
-										              <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur" />
-										              <feOffset in="blur" dx="0" dy="3" result="offsetBlur" />
-										              <feMerge>
-										                <feMergeNode />
-										                <feMergeNode in="SourceGraphic" />
-										              </feMerge>
-										            </filter>
-										          </defs>
-										        </svg>
-										      </div>
-										    </li>
-										    <li class="chart">
-										      <h3 class="chart--subHeadline">Chart 2</h3>
-										      <h2 class="chart--headline">Area Label Would Go Here</h2>
-										      <div id="lineChart">
-										        <svg id="lineChartSVG" class="lineChart--svg">
-										          <defs>
-										            <linearGradient id="lineChart--gradientBackgroundArea" x1="0" x2="0" y1="0" y2="1">
-										              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
-										              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
-										            </linearGradient>
-										          </defs>
-										        </svg>
-										      </div>
-										    </li>
-										  </ul>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-----------------------tab2 content------------------------>
-							<div class="tab-pane fade" id="cont2">
-								<p>Tab2 content</p>
-							</div>
-							<!-----------------------tab3 content------------------------>
-							<div class="tab-pane fade" id="cont3">
-								<p>Tab3 content</p>
-							</div>
-							<!-----------------------tab4 content------------------------>
-							<div class="tab-pane fade" id="cont4">
-								<p>Tab4 content</p>
-							</div>
-							<!-----------------------tab1 content------------------------>
-							<div class="tab-pane fade" id="cont5">
-								<p>Tab5 content</p>
-							</div>
-						</div>
-    				</div><!--/row-->
-    			</div><!--/container--> 
-  		</div>
-	</section>
+	<span id="profilID"></span>
+	
 		<!------------------------END--OF--SECTION--4------------------------>
 		
 		<!------------------------SECTION--5------------------------>
+		
 		<!------------------------END--OF--SECTION--5------------------------>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 		<script src="bootstrap.min.js"></script>
 		<script src="scripts.js"></script>
-		<script src="d3js.js"></script>
+		<script src="http://d3js.org/d3.v2.min.js?2.9.4"></script>
+		<!--script src="d3js.js"></script-->
 		<script src="funkcionalnost.js"></script>
 	</body>
 </html>
