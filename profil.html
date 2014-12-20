@@ -11,76 +11,84 @@
 						</ul>
 						<div id="myTabContent" class="tab-content">
 							<!-----------------------tab1 content------------------------>
-							<div class="tab-pane fade active in" id="cont1">
-								<div class="row">
-									<div class="col-lg-6">
-										<div class="row"><div class="col-lg-6 col-sm-12">&nbsp</div></div>
-										<div class="row">
-											<div class="col-lg-6 col-sm-12">
-												<div class="col-lg-6 col-sm-6">
-													<label>&nbsp&nbsp&nbsp&nbspIme:</label>
-				        							<h4 id="headerIme">&nbsp&nbsp&nbsp&nbspMatic</h4>
-				      							</div>
-				      							<div class="col-lg-6 col-sm-6">
-													<label>&nbsp&nbsp&nbsp&nbspPriimek:</label>
-				        							<h4 id="headerPriimek">&nbsp&nbsp&nbsp&nbspRepše</h4>
-				      							</div>
-			      							</div>
-										</div>
-										<div class="row"><div class="col-lg-6 col-sm-12">&nbsp</div></div>
-										<div class="row">
-											<div class="col-lg-6 col-sm-12">
-												<div class="col-lg-6 col-sm-6">
-													<label>&nbsp&nbsp&nbsp&nbspSpol:</label>
-				        							<h4 id="headerSpol">&nbsp&nbsp&nbsp&nbspMoški</h4>
-				      							</div>
-				      							<div class="col-lg-6 col-sm-6">
-													<label>&nbsp&nbsp&nbsp&nbspStarost:</label>
-				        							<h4 id="headerStarost">&nbsp&nbsp&nbsp&nbsp19</h4>
-				      							</div>
-			      							</div>
-										</div>
-		      						</div>
-	      							<div class="col-lg-6">
-										<div class="charts--container">
-										  <ul>
-										    <li class="chart">
-										      <h3 class="chart--subHeadline">Povprečni indeks telesne mase Slovenije</h3>
-										      <h2 class="chart--headline">Moški</h2>
-										      <div id="lineChart">
-										        <svg id="lineChartSVG" class="lineChart--svg">
-										          <defs>
-										            <linearGradient id="lineChart--gradientBackgroundArea" x1="0" x2="0" y1="0" y2="1">
-										              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
-										              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
-										            </linearGradient>
-										          </defs>
-										        </svg>
-										      </div>
-										    </li>
-										  </ul>
-										</div>
-										<div class="charts--container">
-										  <ul>
-										    <li class="chart">
-										      <h3 class="chart--subHeadline">Povprečni indeks telesne mase Slovenije</h3>
-										      <h2 class="chart--headline">Moški</h2>
-										      <div id="lineChartMale">
-										        <svg id="lineChartSVG" class="lineChart--svg">
-										          <defs>
-										            <linearGradient id="lineChart--gradientBackgroundArea" x1="0" x2="0" y1="0" y2="1">
-										              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
-										              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
-										            </linearGradient>
-										          </defs>
-										        </svg>
-										      </div>
-										    </li>
-										  </ul>
-										</div>
-									</div>
-								</div>
-							</div>
+<div class="tab-pane fade active in" id="cont1">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="row"><div class="col-lg-6 col-sm-12">&nbsp</div></div>
+      <div class="row">
+        <div class="col-lg-6 col-sm-12">
+          <div class="col-lg-6 col-sm-6">
+          <label>&nbsp&nbsp&nbsp&nbspIme:</label>
+          <h4 id="headerIme">&nbsp&nbsp&nbsp&nbspMatic</h4>
+          </div>
+          <div class="col-lg-6 col-sm-6">
+          <label>&nbsp&nbsp&nbsp&nbspPriimek:</label>
+          <h4 id="headerPriimek">&nbsp&nbsp&nbsp&nbspRepše</h4>
+          </div>
+        </div>
+      </div>
+      <div class="row"><div class="col-lg-6 col-sm-12">&nbsp</div></div>
+      <div class="row">
+        <div class="col-lg-6 col-sm-12">
+          <div class="col-lg-6 col-sm-6">
+          <label>&nbsp&nbsp&nbsp&nbspSpol:</label>
+          <h4 id="headerSpol">&nbsp&nbsp&nbsp&nbspMoški</h4>
+          </div>
+          <div class="col-lg-6 col-sm-6">
+          <label>&nbsp&nbsp&nbsp&nbspStarost:</label>
+          <h4 id="headerStarost">&nbsp&nbsp&nbsp&nbsp19</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-lg-12">
+        <h2 class="chart--Headline text-center">Povprečni indeks telesne mase Slovenije</h2>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="charts--container">
+              <ul>
+                <li class="chart">
+                  <h2 class="text-center">Moški</h2>
+                  <div id="lineChartMale">
+                    <svg id="lineChartSVG" class="lineChart--svg">
+                      <defs>
+                        <linearGradient id="lineChart--gradientBackgroundArea" x1="0" x2="0" y1="0" y2="1">
+                          <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+                          <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="charts--container">
+              <ul>
+                <li class="chart">
+                  <h2 class="text-center">Ženske</h2>
+                  <div id="lineChartFemale">
+                    <svg id="lineChartSVG" class="lineChart--svg">
+                      <defs>
+                        <linearGradient id="lineChart--gradientBackgroundArea" x1="0" x2="0" y1="0" y2="1">
+                          <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+                          <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+      </div>
+      <br>via <a href="http://chartsbin.com/view/577" title="Body Mass Index (BMI) by Country">chartsbin.com</a>
+    </div>
+  </div>
+</div>
 							<!-----------------------tab2 content------------------------>
 							<div class="tab-pane fade" id="cont2">
 								<form class="form-horizontal">
@@ -119,58 +127,70 @@
 	<script type="text/javascript">
 		(function (){
   var data = {
-    lineChart : [
+    lineChartFemale : [
       {
-        date  : '2006-02-22',
-        label : 'foo',
-        value : 950
+        date  : '1980-01-01',
+        label : 'Leto: 1980',
+        value : 26.38
       },
       {
-        date  : '2006-08-22',
-        label : 'bar',
-        value : 1000
-      }/*,
-      {
-        date  : '2007-01-11',
-        label : 'baz',
-        value : 700
+        date  : '1990-01-01',
+        label : 'Leto: 1990',
+        value : 26.32
       },
       {
-        date  : '2008-10-01',
-        label : 'boing',
-        value : 534
+        date  : '2000-01-01',
+        label : 'Leto: 2000',
+        value : 26.31
       },
       {
-        date  : '2009-02-24',
-        label : 'loool',
-        value : 1423
+        date  : '2006-01-01',
+        label : 'Leto: 2006',
+        value : 26.53
       },
       {
-        date  : '2010-12-30',
-        label : 'YEAH',
-        value : 1222
+        date  : '2007-01-01',
+        label : 'Leto: 2007',
+        value : 26.56
       },
       {
-        date  : '2011-05-15',
-        label : 'Hurray',
-        value : 948
-      },
-      {
-        date  : '2012-04-02',
-        label : 'WTF',
-        value : 1938
-      },
-      {
-        date  : '2013-08-19',
-        label : 'OMG',
-        value : 1245
-      },
-      {
-        date  : '2013-11-11',
-        label : 'KAKEC',
-        value : 888
-      }*/
+        date  : '2008-01-01',
+        label : 'Leto: 2008',
+        value : 26.58
+      }
     ],
+    lineChartMale : [
+      {
+        date  : '1980-01-01',
+        label : 'Leto: 1980',
+        value : 25.65
+      },
+      {
+        date  : '1990-01-01',
+        label : 'Leto: 1990',
+        value : 26.0
+      },
+      {
+        date  : '2000-01-01',
+        label : 'Leto: 2000',
+        value : 26.67
+      },
+      {
+        date  : '2006-01-01',
+        label : 'Leto: 2006',
+        value : 27.24
+      },
+      {
+        date  : '2007-01-01',
+        label : 'Leto: 2007',
+        value : 27.33
+      },
+      {
+        date  : '2008-01-01',
+        label : 'Leto: 2008',
+        value : 27.42
+      }
+    ]
   };
   
   var DURATION = 1500;
@@ -214,10 +234,10 @@
         x          = d3.time.scale().range( [ 0, width - detailWidth ] ),
         xAxis      = d3.svg.axis().scale( x )
                                   .ticks ( 8 )
-                                  .tickSize( -height ),
+                                  .tickSize( -(height) ),
         xAxisTicks = d3.svg.axis().scale( x )
                                   .ticks( 16 )
-                                  .tickSize( -height )
+                                  .tickSize( -(height) )
                                   .tickFormat( '' ),
         y          = d3.scale.linear().range( [ height, 0 ] ),
         yAxisTicks = d3.svg.axis().scale( y )
@@ -230,12 +250,12 @@
                       .interpolate( 'linear' )
                       .x( function( d )  { return x( d.date ) + detailWidth / 2; } )
                       .y0( height )
-                      .y1( function( d ) { return y( d.value ); } ),
+                      .y1( function( d ) { return y( d.value*50 ); } ),
 
         line = d3.svg.line()
                   .interpolate( 'linear' )
                   .x( function( d ) { return x( d.date ) + detailWidth / 2; } )
-                  .y( function( d ) { return y( d.value ); } ),
+                  .y( function( d ) { return y( d.value*50 ); } ),
         
         startData = data.map( function( datum ) {
                       return {
@@ -249,7 +269,7 @@
     // Compute the minimum and maximum date, and the maximum price.
     x.domain( [ data[ 0 ].date, data[ data.length - 1 ].date ] );
     // hacky hacky hacky :(
-    y.domain( [ 0, d3.max( data, function( d ) { return d.value; } ) + 700 ] );
+    y.domain( [ 0, d3.max( data, function( d ) { return d.value*50; } ) + 700 ] );
 
     svg.append( 'g' )
         .attr( 'class', 'lineChart--xAxisTicks' )
@@ -303,7 +323,7 @@
                     .attr(
                       'cy',
                       function( d ) {
-                        return y( d.value );
+                        return y( d.value*50 );
                       }
                     )
                     .on( 'mouseenter', function( d ) {
@@ -367,7 +387,7 @@
                             
                             result += x( data.date );
                             result += ', ';
-                            result += y( data.value ) - detailHeight - detailMargin;
+                            result += y( data.value*50 ) - detailHeight - detailMargin;
                             result += ')';
                             
                             return result;
@@ -409,8 +429,8 @@
   }
   
   function ಠ_ಠ() {
-    drawLineChart(    'lineChart',    data.lineChart );
-    drawLineChart(    'lineChartMale',    data.lineChart );
+    drawLineChart(    'lineChartFemale',    data.lineChartFemale );
+    drawLineChart(    'lineChartMale',    data.lineChartMale );
   }
   
   // yeah, let's kick things off!!!
