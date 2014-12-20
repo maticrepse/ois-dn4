@@ -44,36 +44,28 @@
 	      							<div class="col-lg-6">
 										<div class="charts--container">
 										  <ul>
-										    <!--li class="chart">
-										      <h3 class="chart--subHeadline">Chart 1</h3>
-										      <h2 class="chart--headline">Pie Question Would Go Here</h2>
-										      <div id="pieChart">
-										        <svg id="pieChartSVG">
+										    <li class="chart">
+										      <h3 class="chart--subHeadline">Povprečni indeks telesne mase Slovenije</h3>
+										      <h2 class="chart--headline">Moški</h2>
+										      <div id="lineChart">
+										        <svg id="lineChartSVG" class="lineChart--svg">
 										          <defs>
-										            <filter id='pieChartInsetShadow'>
-										              <feOffset dx='0' dy='0'/>
-										              <feGaussianBlur stdDeviation='3' result='offset-blur' />
-										              <feComposite operator='out' in='SourceGraphic' in2='offset-blur' result='inverse' />
-										              <feFlood flood-color='black' flood-opacity='1' result='color' />
-										              <feComposite operator='in' in='color' in2='inverse' result='shadow' />
-										              <feComposite operator='over' in='shadow' in2='SourceGraphic' />
-										            </filter>
-										            <filter id="pieChartDropShadow">
-										              <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur" />
-										              <feOffset in="blur" dx="0" dy="3" result="offsetBlur" />
-										              <feMerge>
-										                <feMergeNode />
-										                <feMergeNode in="SourceGraphic" />
-										              </feMerge>
-										            </filter>
+										            <linearGradient id="lineChart--gradientBackgroundArea" x1="0" x2="0" y1="0" y2="1">
+										              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+										              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+										            </linearGradient>
 										          </defs>
 										        </svg>
 										      </div>
-										    </li-->
+										    </li>
+										  </ul>
+										</div>
+										<div class="charts--container">
+										  <ul>
 										    <li class="chart">
-										      <h3 class="chart--subHeadline">Chart 2</h3>
-										      <h2 class="chart--headline">Area Label Would Go Here</h2>
-										      <div id="lineChart">
+										      <h3 class="chart--subHeadline">Povprečni indeks telesne mase Slovenije</h3>
+										      <h2 class="chart--headline">Moški</h2>
+										      <div id="lineChartMale">
 										        <svg id="lineChartSVG" class="lineChart--svg">
 										          <defs>
 										            <linearGradient id="lineChart--gradientBackgroundArea" x1="0" x2="0" y1="0" y2="1">
@@ -108,7 +100,8 @@
 							</div>
 							<!-----------------------tab3 content------------------------>
 							<div class="tab-pane fade" id="cont3">
-								<p>Tab3 content</p>
+								<iframe width="948" height="480" src="http://chartsbin.com/embed/577" frameborder="0"> </iframe>
+								<br>via <a href="http://chartsbin.com/view/577" title="Body Mass Index (BMI) by Country">chartsbin.com</a>
 							</div>
 							<!-----------------------tab4 content------------------------>
 							<div class="tab-pane fade" id="cont4">
@@ -178,20 +171,6 @@
         value : 888
       }*/
     ],
-    pieChart  : [
-      {
-        color       : 'red',
-        description : 'Ipsem lorem text goes here. And foo goes bar goes baz. That\'s up!!!',
-        title       : 'flowers',
-        value       : 0.62
-      },
-      {
-        color       : 'blue',
-        description : 'Another ipsem text goes here. And baz goes bar goes foo. Oh yeah, whazzz up?',
-        title       : 'trains',
-        value       : 0.38
-      }
-    ]
   };
   
   var DURATION = 1500;
@@ -429,165 +408,9 @@
     }
   }
   
-  /**
-   * draw the fancy pie chart
-   *
-   * @param {String} elementId elementId
-   * @param {Array}  data      data
-   */
-  /*function drawPieChart( elementId, data ) {
-    // TODO code duplication check how you can avoid that
-    var containerEl = document.getElementById( elementId ),
-        width       = containerEl.clientWidth,
-        height      = width * 0.4,
-        radius      = Math.min( width, height ) / 2,
-        container   = d3.select( containerEl ),
-        svg         = container.select( 'svg' )
-                              .attr( 'width', width )
-                              .attr( 'height', height );
-    var pie = svg.append( 'g' )
-                .attr(
-                  'transform',
-                  'translate(' + width / 2 + ',' + height / 2 + ')'
-                );
-    
-    var detailedInfo = svg.append( 'g' )
-                          .attr( 'class', 'pieChart--detailedInformation' );
-
-    var twoPi   = 2 * Math.PI;
-    var pieData = d3.layout.pie()
-                    .value( function( d ) { return d.value; } );
-
-    var arc = d3.svg.arc()
-                    .outerRadius( radius - 20)
-                    .innerRadius( 0 );
-    
-    var pieChartPieces = pie.datum( data )
-                            .selectAll( 'path' )
-                            .data( pieData )
-                            .enter()
-                            .append( 'path' )
-                            .attr( 'class', function( d ) {
-                              return 'pieChart__' + d.data.color;
-                            } )
-                            .attr( 'filter', 'url(#pieChartInsetShadow)' )
-                            .attr( 'd', arc )
-                            .each( function() {
-                              this._current = { startAngle: 0, endAngle: 0 }; 
-                            } )
-                            .transition()
-                            .duration( DURATION )
-                            .attrTween( 'd', function( d ) {
-                              var interpolate = d3.interpolate( this._current, d );
-                              this._current = interpolate( 0 );
-                    
-                              return function( t ) {
-                                return arc( interpolate( t ) );
-                              };
-                            } )
-                            .each( 'end', function handleAnimationEnd( d ) {
-                              drawDetailedInformation( d.data, this ); 
-                            } );
-
-    drawChartCenter(); 
-    
-    function drawChartCenter() {
-      var centerContainer = pie.append( 'g' )
-                                .attr( 'class', 'pieChart--center' );
-      
-      centerContainer.append( 'circle' )
-                      .attr( 'class', 'pieChart--center--outerCircle' )
-                      .attr( 'r', 0 )
-                      .attr( 'filter', 'url(#pieChartDropShadow)' )
-                      .transition()
-                      .duration( DURATION )
-                      .delay( DELAY )
-                      .attr( 'r', radius - 50 );
-      
-      centerContainer.append( 'circle' )
-                      .attr( 'id', 'pieChart-clippy' )
-                      .attr( 'class', 'pieChart--center--innerCircle' )
-                      .attr( 'r', 0 )
-                      .transition()
-                      .delay( DELAY )
-                      .duration( DURATION )
-                      .attr( 'r', radius - 55 )
-                      .attr( 'fill', '#fff' );
-    }
-    
-    function drawDetailedInformation ( data, element ) {
-      var bBox      = element.getBBox(),
-          infoWidth = width * 0.3,
-          anchor,
-          infoContainer,
-          position;
-      
-      if ( ( bBox.x + bBox.width / 2 ) > 0 ) {
-        infoContainer = detailedInfo.append( 'g' )
-                                    .attr( 'width', infoWidth )
-                                    .attr(
-                                      'transform',
-                                      'translate(' + ( width - infoWidth ) + ',' + ( bBox.height + bBox.y ) + ')'
-                                    );
-        anchor   = 'end';
-        position = 'right';
-      } else {
-        infoContainer = detailedInfo.append( 'g' )
-                                    .attr( 'width', infoWidth )
-                                    .attr(
-                                      'transform',
-                                      'translate(' + 0 + ',' + ( bBox.height + bBox.y ) + ')'
-                                    );
-        anchor   = 'start';
-        position = 'left';
-      }
-
-      infoContainer.data( [ data.value * 100 ] )
-                    .append( 'text' )
-                    .text ( '0 %' )
-                    .attr( 'class', 'pieChart--detail--percentage' )
-                    .attr( 'x', ( position === 'left' ? 0 : infoWidth ) )
-                    .attr( 'y', -10 )
-                    .attr( 'text-anchor', anchor )
-                    .transition()
-                    .duration( DURATION )
-                    .tween( 'text', function( d ) {
-                      var i = d3.interpolateRound(
-                        +this.textContent.replace( /\s%/ig, '' ),
-                        d
-                      );
-
-                      return function( t ) {
-                        this.textContent = i( t ) + ' %';
-                      };
-                    } );
-      
-      infoContainer.append( 'line' )
-                    .attr( 'class', 'pieChart--detail--divider' )
-                    .attr( 'x1', 0 )
-                    .attr( 'x2', 0 )
-                    .attr( 'y1', 0 )
-                    .attr( 'y2', 0 )
-                    .transition()
-                    .duration( DURATION )
-                    .attr( 'x2', infoWidth );
-      
-      infoContainer.data( [ data.description ] ) 
-                    .append( 'foreignObject' )
-                    .attr( 'width', infoWidth ) 
-                    .attr( 'height', 100 )
-                    .append( 'xhtml:body' )
-                    .attr(
-                      'class',
-                      'pieChart--detail--textContainer ' + 'pieChart--detail__' + position
-                    )
-                    .html( data.description );
-    }
-  }*/
-  
   function ಠ_ಠ() {
-    //drawPieChart(     'pieChart',     data.pieChart );
     drawLineChart(    'lineChart',    data.lineChart );
+    drawLineChart(    'lineChartMale',    data.lineChart );
   }
   
   // yeah, let's kick things off!!!
