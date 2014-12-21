@@ -32,7 +32,7 @@
 		      <ul class="nav navbar-nav navbar-left">
 		        <li><a href="#section1">Začetek</a></li>
 		        <li><a href="#section2">Ustvari EHR</a></li>
-		        <li><a href="#section5">Vnesi ID</a></li>
+		        <li><a href="#section3">Vnesi ID</a></li>
 		        <li>&nbsp;</li>
 		      </ul>
 		      
@@ -53,7 +53,7 @@
 					<div class="col-sm-3"></div>
 					<div class="col-sm-2">
 						<div class="row">
-							<div class="col-sm-10 col-sm-offset-2 text-center"><a href="#section5" class="btn btn-info btn-lg">&nbspDA!&nbsp</a></div>
+							<div class="col-sm-10 col-sm-offset-2 text-center"><a href="#section3" class="btn btn-info btn-lg">&nbspDA!&nbsp</a></div>
 						</div>
 					</div>
 					<div class="col-sm-1"><div class="row"></div>&nbsp</div>
@@ -82,6 +82,8 @@
 									<select class="form-control input-sm" id="selectPrimer">
 										<option value=""></option>
 										<option value="Pujsa,Pepa,1938-10-30T14:58">Pujsa Pepa</option>
+										<option value="Andrej,Sambalino,1963-06-10T01:33">Andrej Sambalino</option>
+										<option value="Domen,Lipnik,1996-01-10T23:23">Domen Lipnik</option>
 									</select>
 								</div>
 	    					</div>
@@ -108,25 +110,25 @@
 	      						<div class="col-lg-10">
 								<div class="radio">
 	  								<label>
-	   									<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+	   									<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" onclick="addChecked(1)">
 	   										Moški
 	  								</label>
 								</div>
 								<div class="radio">
 	  								<label>
-	    								<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+	    								<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" onclick="addChecked(2)">
 	    									Ženska
 	  								</label>
 								</div>
 								<div class="radio">
 	  								<label>
-	    								<input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+	    								<input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" onclick="addChecked(3)">
 	    									Drugo
 	  								</label>
 								</div>
 								<div class="radio">
 	  								<label>
-	    								<input type="radio" name="optionsRadios" id="optionsRadios4" value="option4">
+	    								<input type="radio" name="optionsRadios" id="optionsRadios4" value="option4" onclick="addChecked(4)">
 	    									Neznano
 	  								</label>
 								</div>
@@ -147,7 +149,7 @@
 		<!------------------------END--OF--SECTION--2------------------------>
 		
 		<!------------------------SECTION--3------------------------>
-		<section class="container-fluid" id="section5">
+		<section class="container-fluid" id="section3">
 			<div class="container">
 				<div class="row">
 					<div class="row"><div class="col-sm-3">&nbsp</div></div>
@@ -163,14 +165,16 @@
 								<div class="col-lg-10">
 									<select class="form-control input-sm" id="selectPrimerID">
 										<option value=""></option>
-										<option value="cdf61712-575d-4ebb-bd22-192312736274">Pujsa Pepa</option>
+										<option value="a0e62a7d-c794-45f3-b3e0-ece1d231ec3c">Pujsa Pepa</option>
+										<option value="1e0bae45-c79c-41bf-bd2f-5bebb6942cc4">Andrej Sambalino</option>
+										<option value="e64fd222-7bf4-4bcf-a8fc-aa476ec5c8d5">Domen Lipnik</option>
 									</select>
 								</div>
 	    					</div>
 	    					<div class="form-group">
 	      						<label for="inputID" class="col-lg-2 control-label">EHR ID</label>
 	      						<div class="col-lg-10">
-	        							<input type="text" class="form-control" id="inputID" placeholder="cdf61712-575d-4ebb-bd22-192312736274">
+	        							<input type="text" class="form-control" id="inputID" placeholder="a0e62a7d-c794-45f3-b3e0-ece1d231ec3c">
 	      						</div>
 	    					</div>
 	    					<div class="form-group">

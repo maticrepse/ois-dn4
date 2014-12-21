@@ -6,8 +6,7 @@
 							<li class="active" id="tab1Stars"><a data-toggle="tab" onclick="switchTab('tab1')" id="tab1">Osnovni podatki</a></li>
 							<li class="" id="tab2Stars"><a data-toggle="tab" onclick="switchTab('tab2')" id="tab2">Meritve</a></li>
 							<li class="" id="tab3Stars"><a data-toggle="tab" onclick="switchTab('tab3')" id="tab3">Dodaj meritve</a></li>
-							<li class="" id="tab4Stars"><a data-toggle="tab" onclick="switchTab('tab4')" id="tab4">tab4</a></li>
-							<li class="" id="tab5Stars"><a data-toggle="tab" onclick="switchTab('tab5')" id="tab5">tab5</a></li>
+							<li class="" id="tab4Stars"><a data-toggle="tab" onclick="switchTab('tab4')" id="tab4">O Indeksu telesne mase</a></li>
 						</ul>
 						<div id="myTabContent" class="tab-content">
 							<!-----------------------tab1 content------------------------>
@@ -19,11 +18,13 @@
         <div class="col-lg-6 col-sm-12">
           <div class="col-lg-6 col-sm-6">
           <label>&nbsp&nbsp&nbsp&nbspIme:</label>
-          <h4 id="headerIme">&nbsp&nbsp&nbsp&nbspMatic</h4>
+          <!--h4 id="headerIme">&nbsp&nbsp&nbsp&nbspMatic</h4-->
+          <span id="imeProfila"></span>
           </div>
           <div class="col-lg-6 col-sm-6">
           <label>&nbsp&nbsp&nbsp&nbspPriimek:</label>
-          <h4 id="headerPriimek">&nbsp&nbsp&nbsp&nbspRepše</h4>
+          <!--h4 id="headerPriimek">&nbsp&nbsp&nbsp&nbspRepše</h4-->
+          <span id="priimekProfila"></span>
           </div>
         </div>
       </div>
@@ -32,11 +33,13 @@
         <div class="col-lg-6 col-sm-12">
           <div class="col-lg-6 col-sm-6">
           <label>&nbsp&nbsp&nbsp&nbspSpol:</label>
-          <h4 id="headerSpol">&nbsp&nbsp&nbsp&nbspMoški</h4>
+          <!--h4 id="headerSpol">&nbsp&nbsp&nbsp&nbspMoški</h4-->
+          <span id="spolProfila"></span>
           </div>
           <div class="col-lg-6 col-sm-6">
           <label>&nbsp&nbsp&nbsp&nbspStarost:</label>
-          <h4 id="headerStarost">&nbsp&nbsp&nbsp&nbsp19</h4>
+          <!--h4 id="headerStarost">&nbsp&nbsp&nbsp&nbsp19</h4-->
+          <span id="starostProfila"></span>
           </div>
         </div>
       </div>
@@ -95,36 +98,71 @@
 	  								<fieldset>
 	    								<legend>Vaše dosedanje meritve:</legend>
 	    								<div class="form-group">
-	    									<label for="selectPrimerID" class="col-lg-2 control-label">Vitalni znak:</label>
-											<div class="col-lg-10">
-												<select class="form-control input-sm" id="selectPrimerID">
-													<option value=""></option>
-													<option value="poizvedba" onclick="izpisiTezo()">Teža</option>
-												</select>
-											</div>
+	    									<label for="selectMeritev" class="col-lg-2 control-label">Vitalni znak:</label>
+											  <div class="col-lg-10">
+												  <select class="form-control input-sm" id="selectMeritev">
+													  <option value=""></option>
+													  <option value="teza">Teža</option>
+                            <option value="visina">Višina</option>
+                            <option value="BMI">Indeks telesne mase (kritične meritve)</option>
+												  </select>
+										  	</div>
 	    								</div>
+	    								<div class="form-group">
+	      						    <div class="col-lg-10 col-lg-offset-2">
+							          	<button type="button" class="btn btn-info" onclick="izpisiTezo()" id="preberiMeritve">Preberi meritve</button>
+								          <span id="preberiMeritveVitalnihZnakovSporocilo"></span>
+								          <div id="rezultatMeritveVitalnihZnakov"></div>
+                                    </div>
+	    					      </div>
+												<!--button type="button" class="btn btn-primary btn-xs" onclick="izpisiTezo()">Preberi meritve vitalnih znakov</button-->
+												
+												
 	    							</fieldset>
 	    						</form>
 							</div>
 							<!-----------------------tab3 content------------------------>
 							<div class="tab-pane fade" id="cont3">
-								<iframe width="948" height="480" src="http://chartsbin.com/embed/577" frameborder="0"> </iframe>
-								<br>via <a href="http://chartsbin.com/view/577" title="Body Mass Index (BMI) by Country">chartsbin.com</a>
+                                <form class="form-horizontal">
+                                    <fieldset>
+                                        <legend>Dodajte si meritve:</legend>
+                                        <div class="form-group">
+                                            <label for="inputVisina" class="col-lg-2 control-label">Visina(cm)</label>
+                                            <div class="col-lg-10">
+                                                <input type="text" class="form-control" id="inputVisina" placeholder="190.5">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputTeza" class="col-lg-2 control-label">Teža(kg)</label>
+                                            <div class="col-lg-10">
+                                                <input type="text" class="form-control" id="inputTeza" placeholder="90">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-10 col-lg-offset-2">
+                                            <button type="button" class="btn btn-info" onclick="dodajMeritve()" id="dodaj">Dodaj meritve</button>
+                                            <span id="dodajMeritveVitalnihZnakovSporocilo"></span>
+                                        </div>
+                                        <span id="izracunanBMI"></span>
+                                    </fieldset>
+                                    <span id="prviVideo"></span>
+                                </form>
 							</div>
 							<!-----------------------tab4 content------------------------>
 							<div class="tab-pane fade" id="cont4">
-								<p>Tab4 content</p>
-							</div>
-							<!-----------------------tab1 content------------------------>
-							<div class="tab-pane fade" id="cont5">
-								<p>Tab5 content</p>
+								<div class="row"><div class="col-lg-10">&nbsp</div></div>
+								<div class="row">
+								  <div class="col-lg-4">&nbsp</div>
+								  <div class="col-lg-4">
+								    <iframe width="420" height="315" src="https://www.youtube.com/v/IQJav8cGDLo"></iframe>
+								  </div>
+								</div>
 							</div>
 						</div>
     				</div><!--/row-->
     			</div><!--/container--> 
   		</div>
 	</section>
-	<script type="text/javascript">
+	<script type="text/javascript" onload="vnesiPodatke();">
 		(function (){
   var data = {
     lineChartFemale : [
@@ -431,6 +469,7 @@
   function ಠ_ಠ() {
     drawLineChart(    'lineChartFemale',    data.lineChartFemale );
     drawLineChart(    'lineChartMale',    data.lineChartMale );
+    vnesiPodatke();
   }
   
   // yeah, let's kick things off!!!
