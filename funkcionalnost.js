@@ -21,8 +21,17 @@ setInterval(function enableButton(){
 	var ime = $("#inputFirst").val();
 	var priimek = $("#inputLast").val();
 	var datumRojstva = $("#inputDatum").val();
-
-	if (!ime || !priimek || !datumRojstva || ime.trim().length == 0 || priimek.trim().length == 0 || datumRojstva.trim().length == 0) {
+	var izbranRadio=false;
+	if($("#optionsRadios1").hasClass("checked")){
+		izbranRadio=true;
+	}else if($("#optionsRadios2").hasClass("checked")){
+		izbranRadio=true;
+	}else if($("#optionsRadios3").hasClass("checked")){
+		izbranRadio=true;
+	}else if($("#optionsRadios4").hasClass("checked")){
+		izbranRadio=true;
+	}
+	if (!ime || !priimek || !datumRojstva || ime.trim().length == 0 || priimek.trim().length == 0 || datumRojstva.trim().length == 0 || !izbranRadio) {
 		$("#ustvari").addClass("disabled");
 	}else{
 		$("#ustvari").removeClass("disabled");
@@ -42,6 +51,15 @@ setInterval(function enableButton(){
 		$("#preberiMeritve").addClass("disabled");
 	}else{
 		$("#preberiMeritve").removeClass("disabled");
+	}
+	
+	var dodajVisino = $("#inputVisina").val();
+	var dodajTezo = $("#inputTeza").val();
+	
+	if (!dodajTezo || !dodajVisino) {
+		$("#dodaj").addClass("disabled");
+	}else{
+		$("#dodaj").removeClass("disabled");
 	}
 }, 1);
 
@@ -350,13 +368,19 @@ function izpisiTezo(){
 						            results += "<tr><td>" + rows[i].time + "</td><td class='text-right'>"+stanje+"    " + rows[i].Body_Mass_Index_magnitude.toFixed(2) + " " 	+ rows[i].Body_Mass_Index_units + "</td>";
 						        }
 						        results += "</table>";
+						        $("#preberiMeritveVitalnihZnakovSporocilo").empty();
+								$("#rezultatMeritveVitalnihZnakov").empty();
 						        $("#rezultatMeritveVitalnihZnakov").append(results);
 					    	} else {
+					    		$("#preberiMeritveVitalnihZnakovSporocilo").empty();
+								$("#rezultatMeritveVitalnihZnakov").empty();
 					    		$("#preberiMeritveVitalnihZnakovSporocilo").html("<span class='obvestilo label label-warning fade-in'>Ni podatkov!</span>");
 					    	}
 
 					    },
 					    error: function(err) {
+					    	$("#preberiMeritveVitalnihZnakovSporocilo").empty();
+								$("#rezultatMeritveVitalnihZnakov").empty();
 					    	$("#preberiMeritveVitalnihZnakovSporocilo").html("<span class='obvestilo label label-danger fade-in'>Napaka '" + JSON.parse(err.responseText).userMessage + "'!");
 							console.log(JSON.parse(err.responseText).userMessage);
 					    }
@@ -364,6 +388,8 @@ function izpisiTezo(){
 				}
 	    	},
 			error: function(err) {
+				$("#preberiMeritveVitalnihZnakovSporocilo").empty();
+				$("#rezultatMeritveVitalnihZnakov").empty();
 	    		$("#preberiMeritveVitalnihZnakovSporocilo").html("<span class='obvestilo label label-danger fade-in'>Napaka '" + JSON.parse(err.responseText).userMessage + "'!");
 				console.log(JSON.parse(err.responseText).userMessage);
 	    	}
