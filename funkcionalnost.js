@@ -68,7 +68,7 @@ function vnesenEHRID() {
 	var ehrId = $("#inputID").val();
 
 	if (!ehrId || ehrId.trim().length == 0) {
-		$("#profilIDneuspesen").html('<div class="alert alert-dismissable alert-danger"><button type="button" class="close" data-dismiss="alert">×</button>Prosim vnesite zahtevan podatek</div>');
+		$("#profilIDneuspesen").html();
 	} else {
 		$.ajax({
 			url: baseUrl + "/demographics/ehr/" + ehrId + "/party",
@@ -77,7 +77,7 @@ function vnesenEHRID() {
 	    	success: function (data) {
 				var party = data.party;
 				$("#profilID").load("profil.html");
-				
+				$("#vasID").empty();
 				$("#profilID").html('<section class="container-fluid" id="section4"><div class="container"><div class="row"></div></div></section>');
 				console.log("Bolnik '" + party.firstNames + " " + party.lastNames + "', ki se je rodil '" + party.dateOfBirth + "'.");
 				$("#neviden").click();
@@ -198,6 +198,8 @@ function ustvariEHR() {
 		                    $("#vasID").html('<div class="form-group has-success"><label class="control-label" for="inputSuccess">Vaš EHR ID</label><input type="text" class="form-control" id="inputSuccess"></div>');
 		                    console.log("Uspešno kreiran EHR '" + ehrId + "'.");
 		                    $("#inputSuccess").val(ehrId);
+		                    $("#neviden2").click();
+		                    $("#inputID").val(ehrId);
 		                }
 		            },
 		            error: function(err) {
